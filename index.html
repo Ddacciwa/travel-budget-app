@@ -15,11 +15,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -30,53 +30,126 @@
         .header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            padding: 30px;
+            padding: 25px;
             text-align: center;
         }
         
         .header h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin-bottom: 10px;
             font-weight: 300;
         }
         
         .header-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
         
         .info-card {
             background: rgba(255,255,255,0.2);
-            padding: 15px;
+            padding: 12px;
             border-radius: 10px;
             text-align: center;
         }
         
         .info-card h3 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             margin-bottom: 5px;
         }
         
         .info-card p {
             opacity: 0.9;
+            font-size: 0.9em;
         }
         
         .content {
-            padding: 40px;
+            padding: 30px;
+        }
+        
+        /* 인원명단 섹션 */
+        .members-section {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .members-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .member-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .member-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .member-share {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+        
+        .delete-member {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #e53e3e;
+            color: white;
+            border: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .member-card:hover .delete-member {
+            display: block;
+        }
+        
+        .add-member {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
         }
         
         .summary-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .summary-card {
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            padding: 25px;
+            padding: 20px;
             border-radius: 15px;
             color: white;
             text-align: center;
@@ -86,12 +159,12 @@
         .summary-card.total {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
             color: #333;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
         
         .summary-card h3 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 8px;
             font-weight: 600;
         }
         
@@ -107,17 +180,40 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 20px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .add-item-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .add-item-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 800px;
         }
         
         th, td {
-            padding: 15px;
+            padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
@@ -126,6 +222,7 @@
             background: #f1f3ff;
             font-weight: 600;
             color: #333;
+            font-size: 0.9em;
         }
         
         .category {
@@ -150,14 +247,14 @@
             background: #667eea;
             color: white;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1em;
         }
         
         .progress-bar {
             width: 100%;
-            height: 8px;
+            height: 6px;
             background: #e2e8f0;
-            border-radius: 4px;
+            border-radius: 3px;
             overflow: hidden;
             margin-top: 5px;
         }
@@ -166,50 +263,6 @@
             height: 100%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             transition: width 0.3s ease;
-        }
-        
-        .admin-section {
-            background: #f7fafc;
-            padding: 25px;
-            border-radius: 15px;
-            border: 2px dashed #cbd5e0;
-        }
-        
-        .admin-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .admin-field {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: white;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .admin-field label {
-            font-weight: 600;
-            color: #4a5568;
-        }
-        
-        .admin-field input {
-            border: 1px solid #e2e8f0;
-            background: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            width: 200px;
-            text-align: right;
-            transition: all 0.3s ease;
-        }
-        
-        .admin-field input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
         
         .editable-cell {
@@ -228,28 +281,41 @@
             text-align: right;
             font-weight: 600;
             color: #2d3748;
+            font-size: inherit;
         }
         
         .editable-input:focus {
             outline: 2px solid #667eea;
             background: white;
             border-radius: 4px;
-            padding: 2px 4px;
+            padding: 2px 6px;
         }
         
-        .edit-icon {
-            opacity: 0;
-            position: absolute;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #667eea;
-            font-size: 0.8em;
-            transition: opacity 0.3s ease;
+        .editable-text {
+            border: none;
+            background: transparent;
+            width: 100%;
+            font-weight: inherit;
+            color: inherit;
+            font-size: inherit;
         }
         
-        .editable-cell:hover .edit-icon {
-            opacity: 1;
+        .editable-text:focus {
+            outline: 2px solid #667eea;
+            background: white;
+            border-radius: 4px;
+            padding: 2px 6px;
+        }
+        
+        .delete-row {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 12px;
         }
         
         .save-button {
@@ -281,19 +347,142 @@
         
         .share-link {
             background: rgba(255,255,255,0.2);
-            padding: 12px 20px;
-            border-radius: 25px;
-            margin: 10px 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 8px 5px;
             display: inline-block;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
             border: 1px solid rgba(255,255,255,0.3);
+            font-size: 0.9em;
         }
         
         .share-link:hover {
             background: rgba(255,255,255,0.3);
             transform: translateY(-2px);
+        }
+        
+        .admin-section {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px dashed #cbd5e0;
+        }
+        
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .admin-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .admin-field label {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9em;
+        }
+        
+        .admin-field input {
+            border: 1px solid #e2e8f0;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            width: 180px;
+            text-align: right;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-field input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .modal h3 {
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .modal-field {
+            margin-bottom: 15px;
+        }
+        
+        .modal-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        
+        .modal-field input, .modal-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        .modal-field input:focus, .modal-field select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .modal-btn.primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .modal-btn.secondary {
+            background: #e2e8f0;
+            color: #4a5568;
         }
         
         @media (max-width: 768px) {
@@ -305,12 +494,40 @@
                 grid-template-columns: 1fr;
             }
             
+            .members-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
             .content {
                 padding: 20px;
             }
             
             table {
-                font-size: 0.9em;
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .info-card h3 {
+                font-size: 1.4em;
             }
         }
     </style>
@@ -321,11 +538,11 @@
             <h1>🌟 여행공용예산</h1>
             <div class="header-info">
                 <div class="info-card">
-                    <h3>1,500만원</h3>
+                    <h3 id="totalBudgetDisplay">15,000,000원</h3>
                     <p>총 예산</p>
                 </div>
                 <div class="info-card">
-                    <h3>5명</h3>
+                    <h3 id="memberCountDisplay">5명</h3>
                     <p>참가인원</p>
                 </div>
                 <div class="info-card">
@@ -333,24 +550,33 @@
                     <p>여행기간</p>
                 </div>
                 <div class="info-card">
-                    <h3>300만원</h3>
-                    <p>1인당 평균</p>
+                    <h3 id="perPersonDisplay">3,000,000원</h3>
+                    <p>1인당 분담금</p>
                 </div>
             </div>
         </div>
 
         <div class="content">
+            <!-- 인원명단 섹션 -->
+            <div class="members-section">
+                <h3>👥 참가 인원명단 및 분담금</h3>
+                <div class="members-grid" id="membersGrid">
+                    <!-- 초기 멤버들이 JavaScript로 추가됨 -->
+                </div>
+                <button class="add-member" onclick="addMemberModal()">+ 인원 추가</button>
+            </div>
+
             <div class="summary-cards">
                 <div class="summary-card">
-                    <h3>40.0%</h3>
+                    <h3 id="foodPercentage">40.0%</h3>
                     <p>식비 비중</p>
                 </div>
                 <div class="summary-card">
-                    <h3>26.7%</h3>
+                    <h3 id="transportPercentage">26.7%</h3>
                     <p>교통비 비중</p>
                 </div>
                 <div class="summary-card">
-                    <h3>12.0%</h3>
+                    <h3 id="activityPercentage">12.0%</h3>
                     <p>활동비 비중</p>
                 </div>
                 <div class="summary-card total">
@@ -361,143 +587,236 @@
 
             <div class="budget-table">
                 <div class="table-header">
-                    📊 세부 예산 내역
+                    <span>📊 세부 예산 내역</span>
+                    <button class="add-item-btn" onclick="addItemModal()">+ 항목 추가</button>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>항목</th>
-                            <th>세부내용</th>
-                            <th>단가/기준</th>
-                            <th>수량</th>
-                            <th>금액</th>
-                            <th>비중</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="category">🚗 교통비</td>
-                            <td>렌터카</td>
-                            <td>400만원</td>
-                            <td>1대</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="4000000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                            <td>
-                                <span class="percentage">26.7%</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 26.7%"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="category">🏨 숙박비</td>
-                            <td>프랑스 호텔</td>
-                            <td>75만원/박</td>
-                            <td>2박</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="1500000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                            <td>
-                                <span class="percentage">10.0%</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 10%"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="category">🍽️ 식비</td>
-                            <td>식비 및 간식</td>
-                            <td>10만원/일/명</td>
-                            <td>10일×6명*</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="6000000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                            <td>
-                                <span class="percentage">40.0%</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 40%"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="category">🍷 주류비</td>
-                            <td>주류 구입</td>
-                            <td>100만원</td>
-                            <td>-</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="1000000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                            <td>
-                                <span class="percentage">6.7%</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 6.7%"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="category">🎁 선물비</td>
-                            <td class="subcategory">기관선물용</td>
-                            <td>10만원</td>
-                            <td>-</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="100000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                            <td rowspan="3">
-                                <span class="percentage">4.7%</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 4.7%"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="subcategory">VIP 기념품</td>
-                            <td>30만원</td>
-                            <td>-</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="300000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="subcategory">부서 직원용</td>
-                            <td>30만원</td>
-                            <td>-</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="300000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="category">🎪 활동비</td>
-                            <td>특별활동비</td>
-                            <td>30만원/명</td>
-                            <td>6명*</td>
-                            <td class="amount editable-cell" onclick="editAmount(this)">
-                                <input type="number" class="editable-input" value="1800000" onblur="updateTotal()" onkeypress="handleEnter(event)">
-                                <span class="edit-icon">✏️</span>
-                            </td>
-                            <td>
-                                <span class="percentage">12.0%</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 12%"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="total-row">
-                            <td colspan="4">💰 총 예산</td>
-                            <td class="amount" id="totalAmount">15,000,000원</td>
-                            <td>100%</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>항목</th>
+                                <th>세부내용</th>
+                                <th>단가/기준</th>
+                                <th>수량</th>
+                                <th>금액</th>
+                                <th>비중</th>
+                                <th>관리</th>
+                            </tr>
+                        </thead>
+                        <tbody id="budgetTableBody">
+                            <tr data-category="교통비">
+                                <td class="category">
+                                    <input type="text" class="editable-text" value="🚗 교통비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="렌터카" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="4,000,000원" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="1대" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="4,000,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">26.7%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 26.7%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="숙박비">
+                                <td class="category">
+                                    <input type="text" class="editable-text" value="🏨 숙박비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="프랑스 호텔" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="750,000원/박" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="2박" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="1,500,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">10.0%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 10%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="식비">
+                                <td class="category">
+                                    <input type="text" class="editable-text" value="🍽️ 식비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="식비 및 간식" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="100,000원/일/명" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="10일×6명*" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="6,000,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">40.0%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="유류비">
+                                <td class="category">
+                                    <input type="text" class="editable-text" value="⛽ 유류비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="주유비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="1,000,000원" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="-" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="1,000,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">6.7%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 6.7%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="선물비">
+                                <td class="category">
+                                    <input type="text" class="editable-text" value="🎁 선물비" onblur="saveBudget()" />
+                                </td>
+                                <td class="subcategory">
+                                    <input type="text" class="editable-text" value="기관선물용" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="100,000원" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="-" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="100,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">0.7%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0.7%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="선물비">
+                                <td></td>
+                                <td class="subcategory">
+                                    <input type="text" class="editable-text" value="VIP 기념품" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="300,000원" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="-" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="300,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">2.0%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 2.0%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="선물비">
+                                <td></td>
+                                <td class="subcategory">
+                                    <input type="text" class="editable-text" value="부서 직원용" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="300,000원" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="-" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="300,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">2.0%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 2.0%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr data-category="활동비">
+                                <td class="category">
+                                    <input type="text" class="editable-text" value="🎪 활동비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="특별활동비" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="300,000원/명" onblur="saveBudget()" />
+                                </td>
+                                <td>
+                                    <input type="text" class="editable-text" value="6명*" onblur="saveBudget()" />
+                                </td>
+                                <td class="amount">
+                                    <input type="text" class="editable-input" value="1,800,000" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                                </td>
+                                <td>
+                                    <span class="percentage">12.0%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 12%"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="delete-row" onclick="deleteRow(this)">×</button>
+                                </td>
+                            </tr>
+                            <tr class="total-row">
+                                <td colspan="4">💰 총 예산</td>
+                                <td class="amount" id="totalAmount">15,000,000원</td>
+                                <td>100%</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div style="padding: 15px; background: #f0f9ff; border-radius: 8px; margin-top: 10px; border-left: 4px solid #3b82f6;">
                     <p style="margin: 0; color: #1e40af; font-size: 0.9em;">
                         <strong>💡 참고:</strong> *표시 항목은 현지 가이드 1명 포함 총 6명 기준이지만, 
@@ -542,173 +861,464 @@
         </div>
     </div>
 
+    <!-- 인원 추가 모달 -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <h3>인원 추가</h3>
+            <div class="modal-field">
+                <label>이름:</label>
+                <input type="text" id="memberName" placeholder="이름을 입력하세요" />
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="closeMemberModal()">취소</button>
+                <button class="modal-btn primary" onclick="addMember()">추가</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 예산항목 추가 모달 -->
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <h3>예산 항목 추가</h3>
+            <div class="modal-field">
+                <label>항목명:</label>
+                <input type="text" id="itemCategory" placeholder="예: 🎫 입장료" />
+            </div>
+            <div class="modal-field">
+                <label>세부내용:</label>
+                <input type="text" id="itemDetail" placeholder="예: 박물관 입장료" />
+            </div>
+            <div class="modal-field">
+                <label>단가/기준:</label>
+                <input type="text" id="itemPrice" placeholder="예: 50,000원/명" />
+            </div>
+            <div class="modal-field">
+                <label>수량:</label>
+                <input type="text" id="itemQuantity" placeholder="예: 5명" />
+            </div>
+            <div class="modal-field">
+                <label>금액:</label>
+                <input type="number" id="itemAmount" placeholder="250000" />
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="closeItemModal()">취소</button>
+                <button class="modal-btn primary" onclick="addBudgetItem()">추가</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // 로컬 스토리지에서 데이터 불러오기
+        // 초기 멤버 목록
+        let members = ['장일용', '김현호', '박순화', '김진환', '정승희'];
+        
+        // 페이지 로드 시 초기화
         window.addEventListener('load', function() {
+            initializeMembers();
+            formatAllNumbers();
+            updateTotal();
             loadBudgetData();
         });
 
-        function editAmount(cell) {
-            const input = cell.querySelector('.editable-input');
-            input.focus();
-            input.select();
+        // 멤버 목록 초기화
+        function initializeMembers() {
+            const membersGrid = document.getElementById('membersGrid');
+            membersGrid.innerHTML = '';
+            
+            members.forEach((member, index) => {
+                const memberCard = createMemberCard(member, index);
+                membersGrid.appendChild(memberCard);
+            });
+            
+            updateMemberCount();
         }
 
+        // 멤버 카드 생성
+        function createMemberCard(name, index) {
+            const card = document.createElement('div');
+            card.className = 'member-card';
+            
+            const shareAmount = getTotalBudget() / members.length;
+            
+            card.innerHTML = `
+                <div class="member-name">${name}</div>
+                <div class="member-share">${formatNumber(shareAmount)}</div>
+                <button class="delete-member" onclick="deleteMember(${index})">×</button>
+            `;
+            
+            return card;
+        }
+
+        // 멤버 추가 모달 열기
+        function addMemberModal() {
+            document.getElementById('memberModal').style.display = 'block';
+            document.getElementById('memberName').value = '';
+            document.getElementById('memberName').focus();
+        }
+
+        // 멤버 추가 모달 닫기
+        function closeMemberModal() {
+            document.getElementById('memberModal').style.display = 'none';
+        }
+
+        // 멤버 추가
+        function addMember() {
+            const name = document.getElementById('memberName').value.trim();
+            if (name) {
+                members.push(name);
+                initializeMembers();
+                closeMemberModal();
+                saveBudget();
+            }
+        }
+
+        // 멤버 삭제
+        function deleteMember(index) {
+            if (members.length > 1) {
+                members.splice(index, 1);
+                initializeMembers();
+                saveBudget();
+            } else {
+                alert('최소 1명의 인원은 필요합니다.');
+            }
+        }
+
+        // 멤버 수 업데이트
+        function updateMemberCount() {
+            document.getElementById('memberCountDisplay').textContent = members.length + '명';
+            updatePerPersonAmount();
+        }
+
+        // 1인당 분담금 업데이트
+        function updatePerPersonAmount() {
+            const total = getTotalBudget();
+            const perPerson = total / members.length;
+            document.getElementById('perPersonDisplay').textContent = formatNumber(perPerson);
+            
+            // 각 멤버 카드의 분담금 업데이트
+            const memberCards = document.querySelectorAll('.member-share');
+            memberCards.forEach(card => {
+                card.textContent = formatNumber(perPerson);
+            });
+        }
+
+        // 예산 항목 추가 모달 열기
+        function addItemModal() {
+            document.getElementById('itemModal').style.display = 'block';
+            document.getElementById('itemCategory').focus();
+        }
+
+        // 예산 항목 추가 모달 닫기
+        function closeItemModal() {
+            document.getElementById('itemModal').style.display = 'none';
+        }
+
+        // 예산 항목 추가
+        function addBudgetItem() {
+            const category = document.getElementById('itemCategory').value.trim();
+            const detail = document.getElementById('itemDetail').value.trim();
+            const price = document.getElementById('itemPrice').value.trim();
+            const quantity = document.getElementById('itemQuantity').value.trim();
+            const amount = document.getElementById('itemAmount').value.trim();
+            
+            if (category && detail && amount) {
+                const tbody = document.getElementById('budgetTableBody');
+                const totalRow = tbody.querySelector('.total-row');
+                
+                const newRow = document.createElement('tr');
+                newRow.setAttribute('data-category', category.replace(/[^\w가-힣]/g, ''));
+                
+                newRow.innerHTML = `
+                    <td class="category">
+                        <input type="text" class="editable-text" value="${category}" onblur="saveBudget()" />
+                    </td>
+                    <td>
+                        <input type="text" class="editable-text" value="${detail}" onblur="saveBudget()" />
+                    </td>
+                    <td>
+                        <input type="text" class="editable-text" value="${price}" onblur="saveBudget()" />
+                    </td>
+                    <td>
+                        <input type="text" class="editable-text" value="${quantity}" onblur="saveBudget()" />
+                    </td>
+                    <td class="amount">
+                        <input type="text" class="editable-input" value="${formatNumberInput(amount)}" onblur="updateTotal()" onkeypress="handleEnter(event)" />
+                    </td>
+                    <td>
+                        <span class="percentage">0%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="delete-row" onclick="deleteRow(this)">×</button>
+                    </td>
+                `;
+                
+                tbody.insertBefore(newRow, totalRow);
+                updateTotal();
+                closeItemModal();
+                
+                // 입력 필드 초기화
+                document.getElementById('itemCategory').value = '';
+                document.getElementById('itemDetail').value = '';
+                document.getElementById('itemPrice').value = '';
+                document.getElementById('itemQuantity').value = '';
+                document.getElementById('itemAmount').value = '';
+            }
+        }
+
+        // 행 삭제
+        function deleteRow(button) {
+            if (confirm('이 항목을 삭제하시겠습니까?')) {
+                const row = button.closest('tr');
+                row.remove();
+                updateTotal();
+            }
+        }
+
+        // 엔터 키 처리
         function handleEnter(event) {
             if (event.key === 'Enter') {
                 event.target.blur();
             }
         }
 
+        // 숫자 포맷팅 (표시용)
         function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원';
+            if (!num || isNaN(num)) return '0원';
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원';
         }
 
-        function updateTotal() {
+        // 숫자 포맷팅 (입력용 - 원 제거)
+        function formatNumberInput(num) {
+            if (!num || isNaN(num)) return '0';
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // 숫자에서 콤마 제거하고 숫자로 변환
+        function parseNumber(str) {
+            if (!str) return 0;
+            return parseInt(str.toString().replace(/[,원]/g, '')) || 0;
+        }
+
+        // 모든 숫자 포맷팅 적용
+        function formatAllNumbers() {
+            const inputs = document.querySelectorAll('.editable-input');
+            inputs.forEach(input => {
+                const value = parseNumber(input.value);
+                input.value = formatNumberInput(value);
+            });
+        }
+
+        // 총 예산 가져오기
+        function getTotalBudget() {
             const inputs = document.querySelectorAll('.editable-input');
             let total = 0;
             
             inputs.forEach(input => {
-                const value = parseInt(input.value) || 0;
+                const value = parseNumber(input.value);
                 total += value;
-                // 즉시 표시 업데이트
-                const cell = input.parentElement;
-                cell.setAttribute('data-value', value);
-                
-                // 금액 형식으로 표시
-                const displayValue = formatNumber(value);
-                input.setAttribute('data-formatted', displayValue);
             });
-
-            // 총액 업데이트
-            document.getElementById('totalAmount').textContent = formatNumber(total);
             
-            // 헤더 정보 업데이트
-            const headerCards = document.querySelectorAll('.info-card h3');
-            headerCards[0].textContent = Math.round(total/10000) + '만원';
-            headerCards[3].textContent = Math.round(total/5/10000) + '만원'; // 5명으로 나누기
-
-            // 비율 업데이트
-            updatePercentages(total);
+            return total;
         }
 
-        function updatePercentages(total) {
-            const inputs = document.querySelectorAll('.editable-input');
-            const percentageElements = document.querySelectorAll('.percentage');
-            const progressBars = document.querySelectorAll('.progress-fill');
+        // 총계 및 비율 업데이트
+        function updateTotal() {
+            const total = getTotalBudget();
+            
+            // 총액 표시 업데이트
+            document.getElementById('totalAmount').textContent = formatNumber(total);
+            document.getElementById('totalBudgetDisplay').textContent = formatNumber(total);
+            
+            // 1인당 분담금 업데이트
+            updatePerPersonAmount();
+            
+            // 비율 및 프로그레스 바 업데이트
+            updatePercentages(total);
+            
+            // 요약 카드 업데이트
+            updateSummaryCards(total);
+        }
 
-            inputs.forEach((input, index) => {
-                if (percentageElements[index]) {
-                    const value = parseInt(input.value) || 0;
-                    const percentage = ((value / total) * 100).toFixed(1);
-                    percentageElements[index].textContent = percentage + '%';
+        // 비율 업데이트
+        function updatePercentages(total) {
+            const rows = document.querySelectorAll('#budgetTableBody tr:not(.total-row)');
+            
+            rows.forEach(row => {
+                const input = row.querySelector('.editable-input');
+                const percentageSpan = row.querySelector('.percentage');
+                const progressFill = row.querySelector('.progress-fill');
+                
+                if (input && percentageSpan && progressFill) {
+                    const value = parseNumber(input.value);
+                    const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
                     
-                    if (progressBars[index]) {
-                        progressBars[index].style.width = percentage + '%';
-                    }
+                    percentageSpan.textContent = percentage + '%';
+                    progressFill.style.width = percentage + '%';
                 }
             });
-
-            // 요약 카드 업데이트
-            const summaryCards = document.querySelectorAll('.summary-card h3');
-            if (summaryCards.length >= 3 && inputs.length >= 3) {
-                summaryCards[0].textContent = ((parseInt(inputs[2].value) / total) * 100).toFixed(1) + '%'; // 식비
-                summaryCards[1].textContent = ((parseInt(inputs[0].value) / total) * 100).toFixed(1) + '%'; // 교통비
-                summaryCards[2].textContent = ((parseInt(inputs[7].value) / total) * 100).toFixed(1) + '%'; // 활동비
-            }
         }
 
+        // 요약 카드 업데이트
+        function updateSummaryCards(total) {
+            const rows = document.querySelectorAll('#budgetTableBody tr:not(.total-row)');
+            let foodAmount = 0, transportAmount = 0, activityAmount = 0;
+            
+            rows.forEach(row => {
+                const category = row.getAttribute('data-category');
+                const input = row.querySelector('.editable-input');
+                const value = parseNumber(input.value);
+                
+                if (category === '식비') foodAmount += value;
+                else if (category === '교통비') transportAmount += value;
+                else if (category === '활동비') activityAmount += value;
+            });
+            
+            const foodPercentage = total > 0 ? ((foodAmount / total) * 100).toFixed(1) : 0;
+            const transportPercentage = total > 0 ? ((transportAmount / total) * 100).toFixed(1) : 0;
+            const activityPercentage = total > 0 ? ((activityAmount / total) * 100).toFixed(1) : 0;
+            
+            document.getElementById('foodPercentage').textContent = foodPercentage + '%';
+            document.getElementById('transportPercentage').textContent = transportPercentage + '%';
+            document.getElementById('activityPercentage').textContent = activityPercentage + '%';
+        }
+
+        // 예산 저장
         function saveBudget() {
             const budgetData = {
+                members: members,
                 manager: document.getElementById('manager').value,
                 account: document.getElementById('account').value,
                 startDate: document.getElementById('startDate').value,
                 endDate: document.getElementById('endDate').value,
-                amounts: []
+                items: []
             };
 
-            document.querySelectorAll('.editable-input').forEach(input => {
-                budgetData.amounts.push(parseInt(input.value) || 0);
+            // 모든 예산 항목 저장
+            const rows = document.querySelectorAll('#budgetTableBody tr:not(.total-row)');
+            rows.forEach(row => {
+                const inputs = row.querySelectorAll('input');
+                if (inputs.length >= 5) {
+                    budgetData.items.push({
+                        category: inputs[0].value,
+                        detail: inputs[1].value,
+                        price: inputs[2].value,
+                        quantity: inputs[3].value,
+                        amount: parseNumber(inputs[4].value)
+                    });
+                }
             });
 
-            localStorage.setItem('travelBudget', JSON.stringify(budgetData));
-            
-            // 저장 성공 알림
-            const button = document.querySelector('.save-button');
-            const originalText = button.textContent;
-            button.textContent = '✅ 저장완료!';
-            button.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
-            }, 2000);
-        }
-
-        function loadBudgetData() {
-            const savedData = localStorage.getItem('travelBudget');
-            if (savedData) {
-                const budgetData = JSON.parse(savedData);
+            try {
+                localStorage.setItem('travelBudget', JSON.stringify(budgetData));
                 
-                if (budgetData.manager) document.getElementById('manager').value = budgetData.manager;
-                if (budgetData.account) document.getElementById('account').value = budgetData.account;
-                if (budgetData.startDate) document.getElementById('startDate').value = budgetData.startDate;
-                if (budgetData.endDate) document.getElementById('endDate').value = budgetData.endDate;
+                // 저장 성공 알림
+                const button = document.querySelector('.save-button');
+                const originalText = button.textContent;
+                button.textContent = '✅ 저장완료!';
                 
-                if (budgetData.amounts) {
-                    const inputs = document.querySelectorAll('.editable-input');
-                    budgetData.amounts.forEach((amount, index) => {
-                        if (inputs[index]) {
-                            inputs[index].value = amount;
-                        }
-                    });
-                    updateTotal();
-                }
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            } catch (e) {
+                console.error('저장 중 오류:', e);
             }
         }
 
+        // 예산 데이터 로드
+        function loadBudgetData() {
+            try {
+                const savedData = localStorage.getItem('travelBudget');
+                if (savedData) {
+                    const budgetData = JSON.parse(savedData);
+                    
+                    if (budgetData.members) {
+                        members = budgetData.members;
+                        initializeMembers();
+                    }
+                    
+                    if (budgetData.manager) document.getElementById('manager').value = budgetData.manager;
+                    if (budgetData.account) document.getElementById('account').value = budgetData.account;
+                    if (budgetData.startDate) document.getElementById('startDate').value = budgetData.startDate;
+                    if (budgetData.endDate) document.getElementById('endDate').value = budgetData.endDate;
+                    
+                    // 저장된 항목들 복원
+                    if (budgetData.items && budgetData.items.length > 0) {
+                        const tbody = document.getElementById('budgetTableBody');
+                        const rows = tbody.querySelectorAll('tr:not(.total-row)');
+                        
+                        budgetData.items.forEach((item, index) => {
+                            if (rows[index]) {
+                                const inputs = rows[index].querySelectorAll('input');
+                                if (inputs.length >= 5) {
+                                    inputs[0].value = item.category || '';
+                                    inputs[1].value = item.detail || '';
+                                    inputs[2].value = item.price || '';
+                                    inputs[3].value = item.quantity || '';
+                                    inputs[4].value = formatNumberInput(item.amount || 0);
+                                }
+                            }
+                        });
+                    }
+                    
+                    updateTotal();
+                }
+            } catch (e) {
+                console.error('로드 중 오류:', e);
+            }
+        }
+
+        // 링크 복사
         function copyLink() {
-            // HTML 코드 전체를 복사
             const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            
-            // 사용자에게 안내
-            const instructions = `
-📋 공유 방법 안내:
-
-1. 코드 복사: 
-   - 이 코드를 복사해서 .html 파일로 저장
-   - 팀원들에게 파일 전송
-
-2. 무료 호스팅 사이트 이용:
-   - CodePen.io
-   - JSFiddle.net  
-   - GitHub Pages
-
-3. 파일 공유:
-   - 구글 드라이브
-   - 드롭박스
-   - 이메일 첨부
-
-아니면 제가 다른 방법을 제안해드릴까요?
-            `;
             
             if (confirm('실제 링크 생성을 위해서는 웹 호스팅이 필요합니다.\n\n현재는 HTML 코드를 복사하거나 파일로 저장하는 방법이 있습니다.\n\n코드를 클립보드에 복사하시겠습니까?')) {
                 navigator.clipboard.writeText(htmlContent).then(() => {
                     alert('HTML 코드가 클립보드에 복사되었습니다!\n\n이 코드를 .html 파일로 저장하시거나\nCodePen, JSFiddle 등에 붙여넣어 사용하세요.');
+                }).catch(err => {
+                    console.error('복사 실패:', err);
                 });
             }
         }
 
+        // PDF 출력
         function exportPDF() {
             window.print();
         }
 
-        // 실시간 자동 저장
-        setInterval(saveBudget, 30000); // 30초마다 자동 저장
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const memberModal = document.getElementById('memberModal');
+            const itemModal = document.getElementById('itemModal');
+            
+            if (event.target === memberModal) {
+                closeMemberModal();
+            }
+            if (event.target === itemModal) {
+                closeItemModal();
+            }
+        }
+
+        // 실시간 자동 저장 (30초마다)
+        setInterval(saveBudget, 30000);
+        
+        // 숫자 입력 필드에 포맷팅 적용
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('editable-input')) {
+                const value = parseNumber(e.target.value);
+                if (value !== 0 || e.target.value === '' || e.target.value === '0') {
+                    e.target.value = formatNumberInput(value);
+                }
+            }
+        });
+        
+        // 포커스 아웃 시 업데이트
+        document.addEventListener('blur', function(e) {
+            if (e.target.classList.contains('editable-input')) {
+                updateTotal();
+            }
+        }, true);
     </script>
-        </div>
-    </div>
 </body>
 </html>
